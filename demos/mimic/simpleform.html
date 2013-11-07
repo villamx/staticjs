@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mimic SimpleForm</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+	<div style="width: 12em;">
+		<form action="none">
+			<fieldset>
+				<legend> Dis|En able </legend>
+				<label>User</label>
+				<input name="user">
+				<label>Password</label>
+				<input name="password" type="password">
+				<br><br>
+				<div>
+					<button type="reset">Clean</button>
+					<button class="mimic-enable" type="button" disabled>Login</button>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<script src="mimic.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('form').mimic('enable', {
+				elements : {
+					'user' : 2,
+					'password' : 3
+				}
+			});
+		});
+	</script>
+</body>
+</html>
